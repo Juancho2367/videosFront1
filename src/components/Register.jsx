@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://back-videos1.vercel.app//v1/yourvideos/register', {
+      const response = await fetch('https://back-videos1.vercel.app/v1/yourvideos/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
