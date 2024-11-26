@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles/Login.css'; // Importar estilos
+import './styles/Login.css';
 
 const Login = () => {
   const [correo, setCorreo] = useState('');
@@ -24,21 +24,15 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Si el login es exitoso, muestra el mensaje con el nombre del usuario
-        alert(data.message); // Mostramos el mensaje de bienvenida con el nombre
-
-        // Almacenar el nombre y correo del usuario en el localStorage
-        const userName = data.message.split(' ')[3]; // Aquí extraemos el nombre (a partir de la respuesta del backend)
+        alert(data.message);
+        const userName = data.message.split (' ')[3];
         const userEmail = correo;
 
-        // Guardar en localStorage
         localStorage.setItem('userName', userName);
         localStorage.setItem('userEmail', userEmail);
 
-        // Redirigir a DashboardMain
         navigate('/dashboard-main');
       } else {
-        // Si ocurre un error en el login
         alert(data.message);
       }
     } catch (error) {

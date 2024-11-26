@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para redirigir
-import './styles/Register.css'; // Si quieres agregar estilos personalizados
+import { useNavigate } from 'react-router-dom';
+import './styles/Register.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -9,10 +9,10 @@ const Register = () => {
     password: ''
   });
 
-  const [error, setError] = useState(''); // Para mostrar errores
-  const [successMessage, setSuccessMessage] = useState(''); // Para mostrar éxito
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
-  const navigate = useNavigate(); // Usamos useNavigate para redirigir al menú principal
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,7 +25,8 @@ const Register = () => {
       const response = await fetch('https://back-videos1.vercel.app/v1/yourvideos/register', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 
+          'application/json',
         },
         body: JSON.stringify({
           nombre: formData.name,
