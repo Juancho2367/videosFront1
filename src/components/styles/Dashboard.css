@@ -17,13 +17,13 @@
 
 .dashboard-header h1 {
     font-size: 28px;
-    color: #007BFF; /* Azul para los encabezados */
+    color: #007BFF;
     margin-bottom: 10px;
 }
 
 .dashboard-header p {
     font-size: 16px;
-    color: #555; /* Texto en gris para el correo */
+    color: #555;
     margin: 0;
 }
 
@@ -44,7 +44,7 @@
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #007BFF; /* Azul para etiquetas */
+    color: #007BFF;
 }
 
 .upload-section input {
@@ -94,7 +94,8 @@
     transition: background-color 0.3s;
 }
 
-.remove-button:hover {
+.remove-button:hover 
+{
     background-color: #ff1a1a;
 }
 
@@ -163,40 +164,6 @@ textarea {
     text-align: center;
 }
 
-.interaction-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.interaction-button:hover {
-    background-color: #0056b3;
-}
-
-.file-select-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    margin-top: 10px;
-    width: 100%;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.file-select-button:hover {
-    background-color: #007BFF;
-}
-
 .go-to-login-section {
     margin-top: 20px;
     text-align: center;
@@ -227,55 +194,3 @@ textarea {
     color: #333;
     margin-bottom: 10px;
 }
-.dashboard-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  
-  .upload-section {
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .file-preview {
-    width: 100%;
-    max-width: 600px;
-    height: 200px; /* Altura fija para evitar el salto */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    overflow: hidden;
-  }
-  
-  .image-preview,
-  .video-preview,
-  .audio-preview {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Ajusta el contenido sin deformarlo */
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 14px;
-    min-height: 20px; /* Asegura que siempre haya espacio para el mensaje */
-  }
-  
-  .video-preview-container {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
-  }
-  
-  .video-preview-container video {
-    width: 100%;
-    height: auto;
-  }
-  

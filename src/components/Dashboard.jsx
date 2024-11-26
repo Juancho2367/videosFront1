@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importar useNavigate
+import { useNavigate } from 'react-router-dom';
 import './styles/Dashboard.css';
 
 const Dashboard = () => {
@@ -9,10 +9,10 @@ const Dashboard = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [isUploading, setIsUploading] = useState(false);
-  const [videoUrl, setVideoUrl] = useState(''); // Para la vista previa
+  const [videoUrl, setVideoUrl] = useState('');
   const [error, setError] = useState('');
   const fileInputRef = useRef(null);
-  const navigate = useNavigate(); // Inicializar el hook navigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userName = localStorage.getItem('userName');
@@ -29,15 +29,14 @@ const Dashboard = () => {
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
 
-    // Validación de tamaño y tipo de archivo
     if (selectedFile) {
-      if (selectedFile.size > 50 * 1024 * 1024) { // Limitar a 50 MB
+      if (selectedFile.size > 50 * 1024 * 1024) {
         setError('El archivo es demasiado grande. El tamaño máximo permitido es 50MB.');
         setFile(null);
         return;
       }
 
-      if (!selectedFile.type.startsWith('video/')) { // Asegurarse de que es un video
+      if (!selectedFile.type.startsWith('video/')) {
         setError('Solo se pueden cargar archivos de video.');
         setFile(null);
         return;
@@ -46,7 +45,7 @@ const Dashboard = () => {
       setFile(selectedFile);
       setFileType(selectedFile.type);
       fileInputRef.current.value = null;
-      setError(''); // Limpia errores al seleccionar un nuevo archivo
+      setError('');
     }
   };
 
@@ -115,7 +114,7 @@ const Dashboard = () => {
   };
 
   const handleGoToDashboardMain = () => {
-    navigate('/dashboard-main'); // Redirige a la ruta dashboard-main
+    navigate('/dashboard-main');
   };
 
   return (
@@ -123,7 +122,8 @@ const Dashboard = () => {
       {userData && (
         <>
           <div className="dashboard-header">
-            <p>{userData.correo}</p> {/* Solo mostrar el correo */}
+            <h1>Bienvenido, {userData.nombre}</h1>
+            <p>{userData.correo}</p>
           </div>
 
           <div className="dashboard-content">
