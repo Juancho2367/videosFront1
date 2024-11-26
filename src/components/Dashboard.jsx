@@ -88,7 +88,7 @@ const Dashboard = () => {
     formData.append('uploadedBy', userData.correo);
 
     try {
-      const response = await fetch('https://back-notubeyet.vercel.app/v1/tubeyet/uploadVideo', {
+      const response = await fetch('https://back-videos1.vercel.app///v1/yourvideos/uploadVideo', {
         method: 'POST',
         body: formData,
       });
