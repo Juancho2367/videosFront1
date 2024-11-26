@@ -9,12 +9,14 @@ const ViewProfile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Obtener el correo del usuario desde el localStorage
     const email = localStorage.getItem('userEmail');
     setUserEmail(email);
 
+    // Función para obtener los videos subidos por el usuario
     const fetchUserVideos = async () => {
       try {
-        const response = await fetch(`https://back-videos1.vercel.app/v1/yourvideos/getUser Videos?email=${email}`);
+        const response = await fetch(`https://back-videos1.vercel.app/v1/yourvideos/getUserVideos?email=${email}`);
         if (response.ok) {
           const data = await response.json();
           setUserVideos(data);
@@ -58,17 +60,15 @@ const ViewProfile = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <div className="header-buttons">
-          <button className="header-button" onClick={handleUploadClick}>
-            Subir video
-          </button>
-          <button className="header-button" onClick={handleGoToDashboard}>
-            Ir al Dashboard
-          </button>
-          <button className="logout-button" onClick={handleLogout}>
-            Cerrar sesión
-          </button>
-        </div>
+        <button className="header-button" onClick={handleUploadClick}>
+          Subir video
+        </button>
+        <button className="header-button" onClick={handleGoToDashboard}>
+          Ir al Dashboard
+        </button>
+        <button className="logout-button" onClick={handleLogout}>
+          Cerrar sesión
+        </button>
       </header>
 
       <main className="video-grid">
